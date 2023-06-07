@@ -10,6 +10,8 @@ import (
 	"io"
 	"os"
 
+	"github.com/marmotedu/iam/internal/iamctl/cmd/helloworld"
+
 	cliflag "github.com/marmotedu/component-base/pkg/cli/flag"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -115,6 +117,13 @@ func NewIAMCtlCommand(in io.Reader, out, err io.Writer) *cobra.Command {
 			Commands: []*cobra.Command{
 				set.NewCmdSet(f, ioStreams),
 				completion.NewCmdCompletion(ioStreams.Out, ""),
+			},
+		},
+		{
+			Message: "Troubleshooting and Debugging Commands:",
+			Commands: []*cobra.Command{
+				validate.NewCmdValidate(f, ioStreams),
+				helloworld.NewCmdHelloworld(f, ioStreams),
 			},
 		},
 	}
