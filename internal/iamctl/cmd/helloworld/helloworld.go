@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	helloworldUsageStr = "helloworld USERNAME PASSWORD"
+	helloworldUsageStr = "HelloWrold USERNAME PASSWORD"
 	maxStringLength    = 17
 )
 
